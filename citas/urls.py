@@ -10,4 +10,7 @@ urlpatterns = [
     path('ver_citas/', views.ver_citas, name='ver_citas'),
     path('historial_medico/', views.historial_medico, name='historial_medico'),
     path('home/', views.home, name='home'),
+    path('admin/', admin.site.urls),
+    path('', lambda request: redirect('home')),  # Redirige la raíz a la vista 'home'
+    path('registro/', include('app_name.urls')),
 ]
