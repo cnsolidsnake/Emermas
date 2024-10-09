@@ -1,0 +1,18 @@
+<h2>Tus Citas</h2>
+<ul>
+    {% for cita in citas %}
+        <li>
+            <strong>Especialidad:</strong> {{ cita.especialidad }}<br>
+            <strong>Fecha:</strong> {{ cita.fecha }}<br>
+            <strong>Hora:</strong> {{ cita.hora }}<br>
+            <strong>Estado:</strong> {{ cita.estado }}
+            {% if cita.estado == "Pendiente" %}
+                <a href="{% url 'cancelar_cita' cita.id %}">Cancelar</a>
+            {% endif %}
+        </li>
+    {% empty %}
+        <p>No tienes citas programadas.</p>
+    {% endfor %}
+</ul>
+<a href="{% url 'solicitar_cita' %}">Solicitar nueva cita</a>
+<p><a href="{% url 'home' %}">Volver a la página principal</a></p>

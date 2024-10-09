@@ -1,0 +1,11 @@
+<h2>Cancelar Cita</h2>
+<p>¿Estás seguro de que deseas cancelar esta cita?</p>
+<p><strong>Especialidad:</strong> {{ cita.especialidad }}</p>
+<p><strong>Fecha:</strong> {{ cita.fecha }}</p>
+<p><strong>Hora:</strong> {{ cita.hora }}</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Cancelar Cita</button>
+</form>
+<a href="{% url 'ver_citas' %}">Volver a mis citas</a>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido a su EPS EMERMAS</h1>
+    <p>En esta página puede registrar, ver y cancelar sus citas, así como consultar su historial médico.</p>
+
+    <ul>
+        <li><a href="{% url 'solicitar_cita' %}">Solicitar Cita</a></li>
+        <li><a href="{% url 'ver_citas' %}">Ver Citas</a></li>
+        <li><a href="{% url 'historial_medico' %}">Historial Médico</a></li>
+    </ul>
+
+    <!-- Botón de deslogueo abajo -->
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+    </form>
+</body>
+</html>

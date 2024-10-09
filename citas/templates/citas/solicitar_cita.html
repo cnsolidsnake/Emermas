@@ -1,0 +1,9 @@
+<h2>Solicitar Cita</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Solicitar</button>
+</form>
+<a href="{% url 'ver_citas' %}">Ver mis citas</a>
+<!-- Formulario de solicitar cita aquí -->
+<p><a href="{% url 'home' %}">Volver a la página principal</a></p>

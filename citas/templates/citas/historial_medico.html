@@ -1,0 +1,15 @@
+<h2>Historial Médico</h2>
+<ul>
+    {% for entrada in historial %}
+        <li>
+            <strong>Fecha:</strong> {{ entrada.fecha }}<br>
+            <strong>Descripción:</strong> {{ entrada.descripcion }}
+        </li>
+    {% empty %}
+        <p>No tienes historial médico registrado.</p>
+    {% endfor %}
+</ul>
+<a href="{% url 'ver_citas' %}">Volver a mis citas</a>
+
+<<!-- Historial médico aquí -->
+<p><a href="{% url 'home' %}">Volver a la página principal</a></p>
