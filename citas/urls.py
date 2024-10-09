@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
-from . import views
 from django.shortcuts import redirect
+from . import views
 
 urlpatterns = [
     path('registro/', views.registro_view, name='registro'),
@@ -13,5 +13,5 @@ urlpatterns = [
     path('historial_medico/', views.historial_medico, name='historial_medico'),
     path('home/', views.home, name='home'),
     path('admin/', admin.site.urls),
-    path('', lambda request: redirect('home'), name='root_redirect'),  # Redirige la raíz a 'home'
+    path('', lambda request: redirect('login')),  # Redirige la raíz a la vista de login
 ]
